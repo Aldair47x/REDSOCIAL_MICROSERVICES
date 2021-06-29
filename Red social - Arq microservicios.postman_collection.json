@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "a49077be-cce6-44ae-83e4-a4bcf65480cc",
+		"name": "Red social - Arq microservicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "PUT - USERS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"test 10\",\r\n    \"correo\": \"test10@test.com\",\r\n    \"password\": \"123456\",\r\n    \"rol\": \"USER_ROLE\",\r\n    \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/api/usuarios/60db81e6fadfa84c58f7545d",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"60db81e6fadfa84c58f7545d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - USER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MGRiODFlNmZhZGZhODRjNThmNzU0NWQiLCJpYXQiOjE2MjQ5OTk0NjIsImV4cCI6MTYyNTAxMzg2Mn0.xcVZ3l3G2TYMrcGZCSRA1ngh-2YNSvr3m2mzckmL-Go",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{uri}}/api/usuarios/60db81e6fadfa84c58f7545d",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"usuarios",
+								"60db81e6fadfa84c58f7545d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{uri}}/api/usuarios?limite=5&desde=0",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "limite",
+									"value": "5"
+								},
+								{
+									"key": "desde",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"test 5\",\r\n    \"correo\": \"test5@test.com\",\r\n    \"password\": \"123456\",\r\n    \"rol\": \"ADMIN_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/api/usuarios",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LOGIN",
+			"item": [
+				{
+					"name": "POST - LOGIN ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"correo\": \"test1@test.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/api/auth/login",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mensajes",
+			"item": [
+				{
+					"name": "GET - MENSAJES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{uri}}/api/mensajes",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"mensajes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Mensajes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MGRiODIwMmZhZGZhODRjNThmNzU0NWUiLCJpYXQiOjE2MjUwMDA1NjIsImV4cCI6MTYyNTAxNDk2Mn0.-49svBZvYy-ZGGMnSrkR1HlLS-ZkGvNAoT7RXLZsJHw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contenido\": \"lorem ipsum dolor sit amet consectetur adipiscing elit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/api/mensajes",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"mensajes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Id - Mensajes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{uri}}/api/mensajes/60db8ae983e0a32ee498319a",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"mensajes",
+								"60db8ae983e0a32ee498319a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Mensajes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contenido\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{uri}}/api/mensajes/60db8ae983e0a32ee498319a",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"mensajes",
+								"60db8ae983e0a32ee498319a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Mensajes",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MGRiODIwMmZhZGZhODRjNThmNzU0NWUiLCJpYXQiOjE2MjUwMDA1NjIsImV4cCI6MTYyNTAxNDk2Mn0.-49svBZvYy-ZGGMnSrkR1HlLS-ZkGvNAoT7RXLZsJHw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{uri}}/api/mensajes/60db8ae983e0a32ee498319a",
+							"host": [
+								"{{uri}}"
+							],
+							"path": [
+								"api",
+								"mensajes",
+								"60db8ae983e0a32ee498319a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
